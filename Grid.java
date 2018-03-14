@@ -212,7 +212,28 @@ public class Grid {
      * @param strength strength(concentration) of the spill
      */
  
-    public void Spill (int row, int col, int strength) {
+    public void Spill (int x, int y, int strength) {
+		
+		if (strength == 0) return;
+		if ( x < 0 || x >= rows || y < 0 || y >= columns ) return;
+		
+		
+		Cell cell =  this.getCell(x,y);
+		if(cell.getValue() == -1)   return;
+		
+		
+		if(cell.getValue() < strength) this.setCell(x,y,strength);
+			//If cell < strength  surface(x,y) = strength 	
+			
+		Spill(x-1,y-1,strength-1);
+		Spill(x-1,y,strength-1);
+		Spill(x-1,y+1,strength-1);
+		Spill(x,y-1,strength-1);
+		Spill(x,y+1,strength-1);
+		Spill(x+1,y-1,strength-1);
+		Spill(x+1,y,strength-1);
+		Spill(x+1,y+1,strength-1);
+		
         }
 
 
