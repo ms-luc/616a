@@ -73,6 +73,8 @@ public class Spill{
      */
 	public static void main(String[] args){
 	
+		Spill spill_obj = new Spill();
+		spill_obj.Spill(5,5,3);
 		print("Hello world");
 	
 	}
