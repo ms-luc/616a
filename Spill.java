@@ -1,10 +1,12 @@
 import static java.lang.System.*;
 
 public class Spill{
+	
+	private print = out.println
 
 	public static void main(String[] args){
 	
-		out.println("Hello world");
+		print("Hello world");
 	
 	}
 
