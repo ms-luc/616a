@@ -71,7 +71,6 @@ public class Spill{
      * Executes the Spill function recursively
      * @param args arguments
      */
-    @Override
 	public static void main(String[] args){
 	
 		print("Hello world");
