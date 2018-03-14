@@ -1,7 +1,6 @@
 package Spill;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.*;  
 
 /**
   * A Grid is a 2-dimensional array of Cells representing a surface 
@@ -213,40 +212,29 @@ public class Grid {
      * @param strength strength(concentration) of the spill
      */
  
-	public Deque<Cell> Q = new ArrayDeque<Cell>();
-    public void Spill (int centerx, int centery, int orgstrength) {
+    public void Spill (int x, int y, int strength) {
 		
-		
-		
-		SpillInCell(centerx,centery, orgstrength);
-		
-		while (Q.peek() != null) {
-			Cell cell = Q.remove();
-			int x = cell.getRow();
-			int y = cell.getCol();
-			int strength = this.getCell(x,y).getValue();
-			SpillInCell (x -1,y -1,strength-1);
-			SpillInCell(x -1,y,strength-1);
-			SpillInCell (x-1,y+1,strength-1);
-			SpillInCell (x,y-1,strength-1);
-			SpillInCell (x,y+1,strength-1);
-			SpillInCell (x+1,y-1,strength-1);
-			SpillInCell (x+1,y,strength-1);
-			SpillInCell (x+1,y+1,strength-1);
-		}
-
-		
-    }
-	
-	void SpillInCell(int x, int y, int strength) {
 		if (strength == 0) return;
 		if ( x < 0 || x >= rows || y < 0 || y >= columns ) return;
-		Cell cell = this.getCell(x,y);
-		if (cell.getValue() < 0) return;
-		if (cell.getValue() >= strength) return;
-		this.setCell(x,y,strength);
-		Q.add(cell);
-	}
+		
+		
+		Cell cell =  this.getCell(x,y);
+		if(cell.getValue() == -1)   return;
+		
+		
+		if(cell.getValue() < strength) this.setCell(x,y,strength);
+			//If cell < strength  surface(x,y) = strength 	
+			
+		Spill(x-1,y-1,strength-1);
+		Spill(x-1,y,strength-1);
+		Spill(x-1,y+1,strength-1);
+		Spill(x,y-1,strength-1);
+		Spill(x,y+1,strength-1);
+		Spill(x+1,y-1,strength-1);
+		Spill(x+1,y,strength-1);
+		Spill(x+1,y+1,strength-1);
+		
+        }
 
 
 }
