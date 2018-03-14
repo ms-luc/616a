@@ -1,3 +1,3 @@
 @echo off
-javac Spill.java
+javac -d . Spill.java
 java Spill

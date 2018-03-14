@@ -4,12 +4,12 @@ import static java.lang.System.*;
 public class Spill{
 	
 	//public int m, n, surface[m,n]
-	public Grid surface;
+	//public Grid surface;
 	
 	private Spill(){
 		
 		//Initialise(surface)	// fills surface with initial values of CLEAR or OBSTACLE 
-		surface = Grid( 10, 10, 3);
+		//surface = Grid( 10, 10, 3);
 		
 	}
 
