@@ -1,3 +1,7 @@
 @echo off
+
+::compile
 javac -d . Spill.java
-java Spill
+
+::execute
+java Spill.Spill
