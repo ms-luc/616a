@@ -26,12 +26,17 @@ public class Spill{
 
 	public void Spill(int x, int y, int strength) {
 		
-		if (strength == 0) return;
-		if ( x < 0 || x >= grid_x || y < 0 || y >= grid_y ) return;
+		if (strength == 0) return null;
+		if ( x < 0 || x >= grid_x || y < 0 || y >= grid_y ) return null;
+		
 		
 		Cell cell =  surface.getCell(x,y);
-		if cell is an OBSTACLE   return
-		If cell < strength  surface(x,y) = strength 	
+		if(cell.getValue() == -1)   return null;
+		
+		
+		if(cell.getValue() < strength) surface.setCell(x,y);
+			//If cell < strength  surface(x,y) = strength 	
+			
 		Spill(x-1,y-1,strength-1)
 		Spill(x-1,y,strength-1)
 		Spill(x-1,y+1,strength-1)
