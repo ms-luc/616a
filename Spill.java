@@ -4,14 +4,28 @@ import static java.lang.System.*;
 public class Spill{
 	
 	// Grid Initial Parameters
+	/**
+     * Number of rows in grid
+     */
 	public int grid_x;
+	/**
+     * Number of columns in grid
+     */
 	public int grid_y;
+	/**
+     * Number of obstacles in grid
+     */
 	public int obstacle_count;
 	
-	//public int m, n, surface[m,n]
-	public Grid surface;
+	/**
+     * Grid
+     */
+	public Grid surface; //public int m, n, surface[m,n]
 	
-	
+	/**
+     * Constructor
+     * initialises all needed variables including Grid
+     */
 	private Spill(){
 		
 		// Grid Initial Parameters
@@ -24,6 +38,12 @@ public class Spill{
 		
 	}
 
+	/**
+     * Executes the Spill function recursively
+     * @param x current cell's x position
+     * @param y current cell's y position
+     * @param strength current cell strength
+     */
 	public void Spill(int x, int y, int strength) {
 		
 		if (strength == 0) return;
@@ -47,16 +67,30 @@ public class Spill{
 		Spill(x+1,y+1,strength-1);
 	}
 	
+	/**
+     * Executes the Spill function recursively
+     * @param args arguments
+     */
+    @Override
 	public static void main(String[] args){
 	
 		print("Hello world");
 	
 	}
 	
+	/**
+     * stdout using System.out.println()
+	 * @param string the input string
+     */
 	private static void print(String string){
 		out.println(string);
 	}
 	
+	/**
+     * Returns a string describing the Spill
+     * @return Spill informaton
+     */
+    @Override
 	public String toString(){
 		return "Nothing yet";
 	}
