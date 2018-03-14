@@ -1,12 +1,15 @@
+package Spill;
 import static java.lang.System.*;
 
 public class Spill{
 	
-	public int m, n, surface[m,n]
+	//public int m, n, surface[m,n]
+	public Grid surface;
 	
 	private Spill(){
 		
-		Initialise(surface)	// fills surface with initial values of CLEAR or OBSTACLE 
+		//Initialise(surface)	// fills surface with initial values of CLEAR or OBSTACLE 
+		surface = Grid( 10, 10, 3);
 		
 	}
 
@@ -16,6 +19,7 @@ public class Spill{
 	
 	}
 
+	/*
 	void Spill(int x, int y, int strength) {
 		if strength =0 return 
 		If x<0 or x>=m or y<0 or y>=n return
@@ -30,7 +34,7 @@ public class Spill{
 		Spill(x+1,y-1,strength-1)
 		Spill(x+1,y,strength-1)
 		Spill(x+1,y+1,strength-1)
-	}
+	}*/
 	
 	private static void print(String string){
 		out.println(string);
