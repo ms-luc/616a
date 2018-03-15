@@ -1,7 +1,7 @@
 @echo off
 
 ::compile
-javac -d . *.java
+javac -d . Grid.java
 
 ::execute
 java Spill.Test
